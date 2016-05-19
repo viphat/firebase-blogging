@@ -1,0 +1,27 @@
+{
+  "name": "turbo-ghost",
+  "main": [
+    "/dist/turbo-ghost.min.js",
+    "/dist/turbo-ghost.min.css"
+  ],
+  "version": "0.1.0",
+  "description": "TODO",
+  "authors": [
+    "TODO"
+  ],
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "klei.json",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "~1.5.5",
+    "angular-route": "~1.5.5"
+  },
+  "devDependencies": {
+  }
+}
