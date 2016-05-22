@@ -51,3 +51,21 @@
   font-weight: 300;
   letter-spacing: 0;
 }
+
+
+.mdl-mini-footer {
+  border-top: #373C4F 1px solid;
+  background: #373C4F;
+}
+
+.mdl-mini-footer--social-btn, .mdl-mini-footer__social-btn {
+  background: #373C4F;
+}
+
+a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    color: #a3be8c;
+  }
+}
