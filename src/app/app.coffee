@@ -1,13 +1,14 @@
+'use strict'
+
 angular.module('turboGhost', [
   'ngRoute'
-  'turboGhost.todo'
+  'turboGhost.posts'
 ])
 .config ($routeProvider) ->
-  'use strict'
   $routeProvider
-    .when '/todo',
-      controller: 'TodoCtrl'
-      templateUrl: '/turbo-ghost/todo/todo.html'
-    .otherwise
-      redirectTo: '/todo'
+  .when '/',
+    controller: 'PostsCtrl'
+    templateUrl: 'posts/posts.html'
+  .otherwise
+    redirectTo: '/'
 

@@ -5,9 +5,9 @@
     "/dist/turbo-ghost.min.css"
   ],
   "version": "0.1.0",
-  "description": "TODO",
+  "description": "TurboGhost",
   "authors": [
-    "TODO"
+    "Dương Vì Phát"
   ],
   "ignore": [
     "**/.*",

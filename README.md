@@ -1,7 +1,7 @@
 # Turbo Ghost
 ============
 
-Code Blog, **Inspired** bởi Ghost.org, viết bằng Angular Js 1.x và Firebase SDK 2.x. (Sẽ nâng cấp lên AngularJs 2.x và Firebase 3.x sau khi chín muồi).
+Code Blog, **inspired** bởi Ghost.org, viết bằng Angular Js 1.x và Firebase SDK 2.x. (Sẽ nâng cấp lên AngularJs 2.x và Firebase 3.x sau khi chín muồi).
 
 - Project được khởi tạo bằng [Slush](http://slushjs.github.io)
 
