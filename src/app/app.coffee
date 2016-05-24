@@ -3,6 +3,8 @@
 angular.module('turboGhost', [
   'ngRoute'
   'turboGhost.posts'
+  'turboGhost.firebase'
+  'turboGhost.api'
 ])
 .config ($routeProvider) ->
   $routeProvider

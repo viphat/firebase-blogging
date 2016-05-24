@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>viphat's notes</title>
+    <link rel="shortcut icon" type="image/ico" href="https://s3-ap-southeast-1.amazonaws.com/linhlan/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.light_green-blue.min.css">
@@ -21,6 +22,8 @@
   <body>
     <ng-view></ng-view>
     
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.min.js"></script>
     <!-- inject:vendor:js -->
     <script src="/angular/angular.js"></script>
     <script src="/angular-route/angular-route.js"></script>
@@ -28,6 +31,8 @@
     <!-- inject:js -->
     <script src="/posts/posts.js"></script>
     <script src="/posts/posts-controller.js"></script>
+    <script src="/firebase/firebase.js"></script>
+    <script src="/api/api.js"></script>
     <script src="/app.js"></script>
     <script src="/turbo-ghost-templates.js"></script>
     <!-- endinject -->
