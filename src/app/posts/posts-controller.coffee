@@ -20,7 +20,7 @@ angular.module 'turboGhost.posts'
       )
       $scope.posts = _.sortBy($scope.posts, 'published_at')
       $scope.posts = _.reverse($scope.posts)
-      console.log $scope.posts
+      $scope.$apply()
     
   loadPosts()
   
