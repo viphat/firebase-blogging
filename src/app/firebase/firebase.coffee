@@ -11,11 +11,10 @@ angular.module 'turboGhost.firebase', []
     }
     firebase.initializeApp(config)
     return firebase
-    
+  
   writePosts = (posts) ->
     firebase = initialize()
     _.each(posts, (post)->
-      console.log post
       firebase.database().ref("posts/#{post.slug}").set({
         title: post.title,
         content: post.content,
@@ -36,11 +35,16 @@ angular.module 'turboGhost.firebase', []
       })
     )
     
+  getPosts = () ->
+    firebase = initialize()
+    firebase.database().ref('posts').orderByChild('published_at').limitToLast(5)
+  
     
   return {
     initialize: initialize
     writeTags: writeTags 
-    writePosts: writePosts  
+    writePosts: writePosts
+    getPosts: getPosts
   }
   
 ]

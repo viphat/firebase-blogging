@@ -1,14 +1,27 @@
 angular.module 'turboGhost.posts'
-.controller 'PostsCtrl', ['$scope', 'ApiService', 'FirebaseService', ($scope, ApiService, FirebaseService) ->
+.controller 'PostsCtrl', ['$scope', 'SETTINGS', 'ApiService', 'FirebaseService', ($scope, SETTINGS, ApiService, FirebaseService) ->
   
   # ApiService.getTags().then (res) ->
   #   FirebaseService.writeTags(res.data.tags)
   
-  ApiService.getPosts().then (res) ->
-    FirebaseService.writePosts(res.data.posts)
+  # ApiService.getPosts().then (res) ->
+  #   FirebaseService.writePosts(res.data.posts)
   
-  $scope.settings =
-    siteUrl: "http://notes.viphat.work"
-    siteLogo: "https://s3-ap-southeast-1.amazonaws.com/viphat.work/blog/avatar-ninja.png"
-    coverPhoto: "https://s3-ap-southeast-1.amazonaws.com/viphat.work/blog/bg.png"
+  $scope.settings = SETTINGS
+  $scope.posts = []
+  
+  loadPosts = () ->
+    postsRef = FirebaseService.getPosts()
+    postsRef.once('value').then (data) ->
+      $scope.posts = []
+      _.forIn(data.val(),(value, key)->
+        item = _.merge(value, {slug: key})
+        $scope.posts.push(item)
+      )
+      $scope.posts = _.sortBy($scope.posts, 'published_at')
+      $scope.posts = _.reverse($scope.posts)
+      console.log $scope.posts
+    
+  loadPosts()
+  
 ]
