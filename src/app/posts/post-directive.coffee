@@ -7,8 +7,5 @@ angular.module 'turboGhost.posts'
   templateUrl: "posts/post.html"
   controller: [ '$scope', ($scope)->
     
-    
-    
-    
   ]
 ]

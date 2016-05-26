@@ -98,135 +98,6 @@ hr {
   padding: 0;
 }
 
-blockquote {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 1.6em 0 1.6em -2.2em;
-  padding: 0 0 0 1.6em;
-  border-left: #4f586b 0.4em solid;
-}
-
-blockquote p {
-  margin: 0.8em 0;
-  font-style: italic;
-}
-
-blockquote small {
-  display: inline-block;
-  margin: 0.8em 0 0.8em 1.5em;;
-  font-size:0.9em;
-  color: #ccc;
-}
-
-blockquote small:before { content: '\2014 \00A0'; }
-
-blockquote cite {
-  font-weight:bold;
-}
-
-blockquote cite a { font-weight: normal; }
-
-
-dl {
-  margin: 1.6em 0;
-}
-
-dl dt {
-  float: left;
-  width: 180px;
-  overflow: hidden;
-  clear: left;
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: bold;
-  margin-bottom: 1em
-}
-
-dl dd {
-  margin-left: 200px;
-  margin-bottom: 1em
-}
-
-mark {
-  background-color: #ffc336;
-}
-
-kbd {
-  display: inline-block;
-  margin-bottom: 0.4em;
-  padding: 1px 8px;
-  border: #ccc 1px solid;
-  color: #666;
-  text-shadow: #fff 0 1px 0;
-  font-size: 0.9em;
-  font-weight: bold;
-  background: #f4f4f4;
-  border-radius: 4px;
-  box-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.2),
-    0 1px 0 0 #fff inset;
-}
-
-/*
- * Table styles
- */
-table {
-  width: 100%;
-  margin: 0 auto;
-  clear: both;
-  font-size:13px !important;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-table thead th,
-table tfoot th {
-  font-weight: bold;
-}
-
-table thead th,
-table thead td {
-  padding: 5px 5px;
-  border-bottom: 1px solid #424650;
-}
-
-table thead th:active,
-table thead td:active {
-  outline: none;
-}
-
-table tfoot th,
-table tfoot td {
-  padding: 5px 5px;
-  border-top: 1px solid #424650;
-}
-
-table tbody tr td {
-  /* background-color: white; */
-  min-width: 60px;
-}
-
-table tbody th,
-table tbody td {
-  padding: 5px 5px;
-}
-
-table,
-table th,
-table td {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-button, input, select, textarea {
-  background: #4f586b;
-  border: 1px solid #424a5a;
-  color: #B2B6BD;
-  outline-color: #bf6165
-}
-
 .animated {
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
@@ -334,3 +205,50 @@ button, input, select, textarea {
   -o-animation-name: bounceInDown;
   animation-name: bounceInDown;
 }
+
+pre {
+  white-space: pre-wrap; //css3
+  white-space: moz-pre-wrap; //firefox
+  white-space: -pre-wrap; //opera 4-6
+  white-space: -o-pre-wrap; //opera 7
+  word-wrap: break-word; //internet explorer
+}
+
+blockquote {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1.6em 0 1.6em -0.8em;
+  padding: 0 0 0 0.8em;
+  border-left: #4f586b 0.15em solid;
+}
+
+blockquote p {
+  margin: 0.8em 0 !important;
+  font-style: italic;
+}
+
+blockquote small {
+  display: inline-block;
+  margin: 0.8em 0 0.8em 1.5em;;
+  font-size:0.9em;
+  color: #ccc;
+}
+
+blockquote small:before { content: '\2014 \00A0'; }
+
+blockquote cite {
+  font-weight:bold;
+}
+
+blockquote cite a { font-weight: normal; }
+
+blockquote::before {
+  left: 0;
+  content: "";
+}
+
+blockquote::after {
+  content: "";
+  margin-left: 0px;
+}
+  
