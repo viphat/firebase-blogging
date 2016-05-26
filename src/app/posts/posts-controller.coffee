@@ -1,12 +1,6 @@
 angular.module 'turboGhost.posts'
 .controller 'PostsCtrl', ['$scope', 'SETTINGS', 'ApiService', 'FirebaseService', ($scope, SETTINGS, ApiService, FirebaseService) ->
   
-  # ApiService.getTags().then (res) ->
-  #   FirebaseService.writeTags(res.data.tags)
-  
-  # ApiService.getPosts().then (res) ->
-  #   FirebaseService.writePosts(res.data.posts)
-  
   $scope.settings = SETTINGS
   $scope.posts = []
   
