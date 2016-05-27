@@ -27,13 +27,17 @@ angular.module 'turboGhost.firebase', []
     
   getTagsByPost = (post) ->
     firebase.database().ref("tags/#{post.slug}")
-  
+    
+  getPostBySlug = (slug) ->
+    firebase.database().ref("posts/#{slug}")
+    
     
   return {
     exportTags: exportTags 
     exportPosts: exportPosts
     getPosts: getPosts
     getTagsByPost: getTagsByPost
+    getPostBySlug: getPostBySlug
   }
   
 ]

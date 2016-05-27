@@ -146,3 +146,16 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
 .tag:hover::after {
    border-left-color: #a3be8c; 
 }
+
+.post-header {
+  width: 100%;
+  .blog-title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    span {
+      font-size: 1.5em;
+      font-weight: bold;      
+    }
+  }
+}

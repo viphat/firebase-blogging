@@ -6,11 +6,11 @@ angular.module 'turboGhost.posts'
   }
   templateUrl: "posts/post.html"
   controller: [ '$scope', ($scope)->
-    shortContent = if $scope.post.excerpt? then $scope.post.excerpt else $scope.post.content
-    $scope.tags = []
-    $scope.post = _.merge($scope.post, { shortContent: shortContent }) 
     
-    getPostTags = () ->
+    initPost = () ->
+      shortContent = if $scope.post.excerpt? then $scope.post.excerpt else $scope.post.content
+      $scope.tags = []
+      $scope.post = _.merge($scope.post, { shortContent: shortContent })
       tagsRef = FirebaseService.getTagsByPost($scope.post)
       tagsRef.once('value').then (data) ->
         $scope.tags = []
@@ -22,7 +22,11 @@ angular.module 'turboGhost.posts'
         )
         $scope.$apply()
       
-    getPostTags()
+    $scope.$on('loadedPost',(event,arg)->
+      initPost()
+    )
+    
+    initPost()
     
   ]
 ]

@@ -3,15 +3,12 @@
     <time datetime="{{ post.published_at | date: 'yyyy-MM-dd' }}"><i class="fa fa-calendar-plus-o fa-fw"></i> {{ post.published_at | date: 'MM/dd/yyyy' }}</time>
   </span>
   <ul class="tags">
-    <li class="tag" ng-repeat='tag in tags track by $index'><a ng-href='/tags/{{ tag.slug }}'>{{ tag.name }}</a></li>
+    <li class="tag" ng-repeat='tag in tags track by $index'><a ng-href='/#/tags/{{ tag.slug }}'>{{ tag.name }}</a></li>
   </ul>  
   <h2 class="post-title">
-    <a ng-href="/{{post.slug}}/">
-      {{ post.title }}
-    </a>
+    <a ng-href="/#/{{post.slug}}/">{{ post.title }}</a>
   </h2>
 </header>
 <section class="post-excerpt">
-  <div marked="post.shortContent">
-  </div>  
+  <div marked="post.shortContent"></div>  
 </section>

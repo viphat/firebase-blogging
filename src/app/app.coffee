@@ -2,7 +2,9 @@
 
 angular.module('turboGhost', [
   'ngRoute'
+  'turboGhost.layouts'
   'turboGhost.posts'
+  'turboGhost.article'
   'turboGhost.firebase'
   'turboGhost.api'
   'hc.marked'
@@ -34,6 +36,9 @@ angular.module('turboGhost', [
 ])
 .config(['$routeProvider', ($routeProvider) ->
   $routeProvider
+  .when '/:post',
+    controller: 'ArticleCtrl'
+    templateUrl: 'article/article.html'
   .when '/',
     controller: 'PostsCtrl'
     templateUrl: 'posts/posts.html'
