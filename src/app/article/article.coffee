@@ -8,6 +8,7 @@ angular.module 'turboGhost.article', []
     postRef = FirebaseService.getPostBySlug(postSlug)
     postRef.once('value', (data)->
       $scope.post = data.val()
+      _.merge($scope.post, { slug: postSlug })  
       $scope.$apply()
       $scope.$broadcast('loadedPost')
     )

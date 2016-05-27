@@ -2,6 +2,7 @@
 
 angular.module('turboGhost', [
   'ngRoute'
+  'ngSanitize'
   'turboGhost.layouts'
   'turboGhost.posts'
   'turboGhost.article'
