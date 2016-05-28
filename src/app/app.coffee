@@ -9,6 +9,7 @@ angular.module('turboGhost', [
   'turboGhost.firebase'
   'turboGhost.api'
   'hc.marked'
+  'angularSmoothscroll'
 ])
 .constant('SETTINGS',{
   siteUrl: "http://notes.viphat.work"

@@ -1,0 +1,11 @@
+<div>
+  <nav ng-if="showTOC" role="navigation" class="table-of-contents">
+    <strong class="title">Bạn sẽ tìm thấy trong bài viết:</strong>
+    <ul>
+      <li ng-repeat="item in items">
+        <a smooth-scroll target="{{item.anchor}}">{{item.text}}</a>
+      </li>      
+    </ul>
+  </nav>  
+  <div ng-bind-html='content'></div>
+</div>
