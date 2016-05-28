@@ -2,7 +2,6 @@ angular.module 'turboGhost.firebase', []
 .service 'FirebaseService', [ ()->
   
   exportPosts = (posts) ->
-    # firebase = ConnectionService.initialize()
     _.each(posts, (post)->
       firebase.database().ref("posts/#{post.slug}").set({
         title: post.title,
@@ -16,21 +15,26 @@ angular.module 'turboGhost.firebase', []
     )
     
   exportTags = (data) ->
-    # firebase = ConnectionService.initialize()
     _.each(data, (item)->
       firebase.database().ref("tags/#{item.slug}").set(item.tags)
     )
     
-  getPosts = () ->
-    # firebase = ConnectionService.initialize()
-    firebase.database().ref('posts').orderByChild('published_at').limitToLast(5)
-    
+  getPosts = (page, lastItem, pageSize) ->
+    return firebase.database().ref('posts').orderByChild('published_at').limitToLast(pageSize) if page is 1
+    if lastItem?
+      return firebase.database().ref('posts').orderByChild('published_at').endAt(lastItem).limitToLast(pageSize+1)
+    else
+      itemsToFetch = (Math.abs(page - 1)) * pageSize
+      return firebase.database().ref('posts').orderByChild('published_at').limitToLast(itemsToFetch)
+     
   getTagsByPost = (post) ->
     firebase.database().ref("tags/#{post.slug}")
     
   getPostBySlug = (slug) ->
     firebase.database().ref("posts/#{slug}")
     
+  getCountOfPosts = () ->
+    firebase.database().ref("posts").orderByChild('status').equalTo('published')
     
   return {
     exportTags: exportTags 
@@ -38,6 +42,7 @@ angular.module 'turboGhost.firebase', []
     getPosts: getPosts
     getTagsByPost: getTagsByPost
     getPostBySlug: getPostBySlug
+    getCountOfPosts: getCountOfPosts
   }
   
 ]

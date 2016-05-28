@@ -322,3 +322,52 @@ code, .hljs {
 .hljs-selector-id {
   font-weight: bold;
 }
+
+.pagination {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 4rem auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.3rem;
+  color: #9EABB3;
+  text-align: center;
+  i {
+    font-size: 1.3rem;
+  }
+}
+
+.pagination a {
+  color: #9EABB3;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+  position: absolute;
+  display: inline-block;
+  padding: 0 15px;
+  border: #424650 1px solid;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: border ease 0.3s;
+  background: #363c4a;
+}
+
+.older-posts {
+  right: 0;
+}
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.newer-posts {
+  left: 0;
+}
+
+.older-posts:hover,
+.newer-posts:hover {
+  border-color: #9EABB3;
+}

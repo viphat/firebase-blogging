@@ -12,7 +12,7 @@ angular.module('turboGhost', [
   'angularSmoothscroll'
 ])
 .constant('SETTINGS',{
-  siteUrl: "http://notes.viphat.work"
+  siteUrl: "/#/"
   siteLogo: "https://s3-ap-southeast-1.amazonaws.com/viphat.work/blog/avatar-ninja.png"
   coverPhoto: "https://s3-ap-southeast-1.amazonaws.com/viphat.work/blog/bg.png"
 })
@@ -41,10 +41,12 @@ angular.module('turboGhost', [
   .when '/:post',
     controller: 'ArticleCtrl'
     templateUrl: 'article/article.html'
+  .when '/pages/:page',
+    controller: 'PostsCtrl'
+    templateUrl: 'posts/posts.html'
   .when '/',
     controller: 'PostsCtrl'
     templateUrl: 'posts/posts.html'
   .otherwise
     redirectTo: '/'
 ])
-
