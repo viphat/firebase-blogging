@@ -3,15 +3,17 @@ angular.module 'turboGhost.posts'
   restrict: 'E'
   scope: {
     post: "="
+    showToc: "="
   }
   templateUrl: "posts/post.html"
-  controller: [ '$scope', 'marked', ($scope, marked)->
+  controller: [ '$scope', 'marked','$sce', ($scope, marked, $sce)->
     
     initPost = () ->
       return unless $scope.post.content?
       shortContent = if $scope.post.excerpt? then $scope.post.excerpt else $scope.post.content
       $scope.tags = []
       htmlContent = marked(shortContent)
+      htmlContent = $sce.trustAsHtml(htmlContent)
       _.merge($scope.post, { 
         shortContent: shortContent
         htmlContent: htmlContent

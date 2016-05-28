@@ -1,6 +1,6 @@
 <header class="post-header">
   <span class="post-meta">
-    <time datetime="{{ post.published_at | date: 'yyyy-MM-dd' }}"><i class="fa fa-calendar-plus-o fa-fw"></i> {{ post.published_at | date: 'MM/dd/yyyy' }}</time>
+    <time datetime="{{ post.published_at | date: 'yyyy-MM-dd' }}"><i class="fa fa-clock-o fa-fw"></i> {{ post.published_at | date: 'MM/dd/yyyy' }}</time>
   </span>
   <ul class="tags">
     <li class="tag" ng-repeat='tag in tags track by $index'><a ng-href='/#/tags/{{ tag.slug }}'>{{ tag.name }}</a></li>
@@ -9,6 +9,6 @@
     <a ng-href="/#/{{post.slug}}/">{{ post.title }}</a>
   </h2>
 </header>
-<section class="post-excerpt">
-  <content content="post.htmlContent"></content>
+<section class="post-content">
+  <content content="post.htmlContent" show-toc="showToc"></content>
 </section>

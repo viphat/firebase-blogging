@@ -3,6 +3,7 @@ angular.module 'turboGhost.posts'
   restrict: 'E'
   scope: {
     content: "="
+    showToc: "="
   }
   templateUrl: "posts/content.html"
   link: ($scope, $element, $attrs) ->
@@ -19,19 +20,33 @@ angular.module 'turboGhost.posts'
       $location.hash(old)
     
     insertTOC = () ->
-      return if $element.find("h3").length < 3
+      return unless $scope.showToc?
+      return if $element.find("h4").length < 2
       $scope.showTOC = true
-      index = 1
-      angular.forEach($element.find("h3"), (value,key)->
-        h3 = angular.element(value)
-        text = h3[0].innerText
-        h3.html("<a id='anchor-#{index}'>#{text}</a>")
+      # jQuery Version
+      $("h4,h5,h6").each((index, value)->
+        text = $(this)[0].innerText
+        $(this).html("<a id='anchor-#{index}'>#{text}</a>")
+        iClass = if $(this)[0].localName is "h4" then "first" else if $(this)[0].localName is "h5" then "second" else "third"
         $scope.items.push({
-          text: text
+          text: text.split(' ').join(' ')
           anchor: "anchor-#{index}"
+          iClass: iClass
         })
-        index += 1
       )
+      return 
+      # Angular Version
+      # index = 1      
+      # angular.forEach($element.find("h4"), (value,key)->
+      #   tag = angular.element(value)
+      #   text = tag[0].innerText
+      #   tag.html("<a id='anchor-#{index}'>#{text}</a>")
+      #   $scope.items.push({
+      #     text: text.split(' ').join(' ')
+      #     anchor: "anchor-#{index}"
+      #   })
+      #   index += 1
+      # )
       
         
     $scope.$watch('content', (n,o)->

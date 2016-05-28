@@ -59,23 +59,18 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
 .post-title {
   margin:0;
   color: #739a99;
-  margin-bottom: 1.6em;
+  margin-bottom: 1.0em;
 }
 
 .post-title a {
   text-decoration: none;
 }
 
-.post-excerpt p {
+.post-content p {
+  text-align: justify;
   margin: 1.6rem 0 1.6rem 0;
   font-size: 0.9em;
   line-height: 1.6em;
-}
-
-.post-excerpt img {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .post-meta {
@@ -161,7 +156,7 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
 }
 
 .table-of-contents {
-  width: 100%;
+  width: 80%;
   background-color: #fcf8e3;
   border-color: #faebcc;
   border: 1px solid transparent;
@@ -169,7 +164,8 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
   color: #8a6d3b;
   font-size: 0.8em;
   padding: 1em 2em;
-  margin: 0 0 0.5em 0.5em;
+  margin: 0 auto;
+  margin-bottom: 1.6em;
   .title {
     font-size: 16px;
   }
@@ -184,33 +180,53 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
 .table-of-contents li {
   margin: 0 0 0.25em 0;
   padding-left: 1.3em;
-  &:before {
-    content: "\f1ce"; /* FontAwesome Unicode */
-    font-family: FontAwesome;
-    display: inline-block;
-    margin-left: -1.3em; /* same as padding-left set on li */
-    width: 1.3em; /* same as padding-left set on li */
-  }
+  
 }
 
 .table-of-contents a {
   color: #8a6d3b;
   text-decoration: none;
   cursor: pointer;
+  &:before {
+    content: "\f292"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+  }
+  &.second:before {
+    content: "\f061";
+    margin-left: 2px;
+  }
+  &.third:before {
+    content: "\f0da";
+    margin-left: 5px;
+  }
+  &.first {
+    font-size: 18px;
+  }
+  &.second {
+    font-size: 16px;    
+  }
+  &.third {
+    font-size: 14px;    
+  }
 }
 .table-of-contents a:hover,
 .table-of-contents a:active {
   text-decoration: underline;
 }
 
-h3 a {
-  text-decoration: none;  
-}
-h3:target {
-  animation: highlight 1s ease;
+h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
 }
 
-@keyframes highlight {
-  from { background: yellow; }
-  to { background: white; }
+
+/* Responsive Video / Images / Iframe */
+.post {
+  iframe {
+    width: initial;
+    min-width: 560px;    
+  }
 }

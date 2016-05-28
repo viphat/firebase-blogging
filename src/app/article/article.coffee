@@ -1,6 +1,7 @@
 angular.module 'turboGhost.article', []
 .controller 'ArticleCtrl', [ '$routeParams','$scope', 'SETTINGS', 'FirebaseService', ($routeParams, $scope, SETTINGS, FirebaseService) ->
   $scope.post = {}
+  $scope.showToc = true
   $scope.settings = SETTINGS
   postSlug = $routeParams.post if $routeParams.post?
   

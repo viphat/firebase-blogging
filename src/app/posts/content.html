@@ -3,7 +3,7 @@
     <strong class="title">Bạn sẽ tìm thấy trong bài viết:</strong>
     <ul>
       <li ng-repeat="item in items">
-        <a smooth-scroll target="{{item.anchor}}">{{item.text}}</a>
+        <a ng-class="item.iClass" smooth-scroll target="{{item.anchor}}">{{item.text}}</a>
       </li>      
     </ul>
   </nav>  
