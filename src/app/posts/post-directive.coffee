@@ -8,6 +8,9 @@ angular.module 'turboGhost.posts'
   templateUrl: "posts/post.html"
   controller: [ '$scope', 'marked','$sce', ($scope, marked, $sce)->
     
+    $scope.isLoading = true
+    componentHandler.upgradeAllRegistered()
+    
     initPost = () ->
       return unless $scope.post.content?
       shortContent = if $scope.post.excerpt? then $scope.post.excerpt else $scope.post.content
@@ -26,6 +29,7 @@ angular.module 'turboGhost.posts'
             name: value.split(" ").join(" ")
           })
         )
+        $scope.isLoading = false
         $scope.$apply()
       
     $scope.$on('loadedPost',(event,arg)->

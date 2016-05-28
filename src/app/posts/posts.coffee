@@ -3,7 +3,9 @@ angular.module 'turboGhost.posts', []
   
   $scope.settings = SETTINGS
   $scope.posts = []
-  
+  $scope.isLoading = true
+  componentHandler.upgradeAllRegistered()
+
   loadPosts = () ->
     postsRef = FirebaseService.getPosts()
     postsRef.once('value').then (data) ->
@@ -14,6 +16,7 @@ angular.module 'turboGhost.posts', []
       )
       $scope.posts = _.sortBy($scope.posts, 'published_at')
       $scope.posts = _.reverse($scope.posts)
+      $scope.isLoading = false
       $scope.$apply()
     
   loadPosts()

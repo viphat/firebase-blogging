@@ -45,6 +45,16 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
   }
 }
 
+.content {
+  min-height: 300px;
+}
+
+.loading-container{
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+}
+
 .post {
   position: relative;
   width:90%;
@@ -191,40 +201,41 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
     }
   }
   
-}
-
-.table-of-contents a {
-  color: #8a6d3b;
-  text-decoration: none;
-  cursor: pointer;
-  &:before {
-    content: "\f292"; /* FontAwesome Unicode */
-    font-family: FontAwesome;
-    font-size: 14px;
-    display: inline-block;
-    margin-left: -1.3em; /* same as padding-left set on li */
-    width: 1.3em; /* same as padding-left set on li */
+  
+  a {
+    color: #8a6d3b;
+    text-decoration: none;
+    cursor: pointer;
+    &:before {
+      content: "\f292"; /* FontAwesome Unicode */
+      font-family: FontAwesome;
+      font-size: 14px;
+      display: inline-block;
+      margin-left: -1.3em; /* same as padding-left set on li */
+      width: 1.3em; /* same as padding-left set on li */
+    }
+    &.second:before {
+      content: "\f061";
+      margin-left: 2px;
+    }
+    &.third:before {
+      content: "\f0da";
+      margin-left: 5px;
+    }
+    &.first {
+      font-size: 18px;
+    }
+    &.second {
+      font-size: 16px;    
+    }
+    &.third {
+      font-size: 14px;    
+    }
+    &:hover, &:active {
+      text-decoration: underline;  
+    }
   }
-  &.second:before {
-    content: "\f061";
-    margin-left: 2px;
-  }
-  &.third:before {
-    content: "\f0da";
-    margin-left: 5px;
-  }
-  &.first {
-    font-size: 18px;
-  }
-  &.second {
-    font-size: 16px;    
-  }
-  &.third {
-    font-size: 14px;    
-  }
-  &:hover, &:active {
-    text-decoration: underline;  
-  }
+  
 }
 
 h3 a, h4 a, h5 a, h6 a {

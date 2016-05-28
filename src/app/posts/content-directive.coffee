@@ -11,7 +11,7 @@ angular.module 'turboGhost.posts'
     $scope.items = []
     
     $scope.scrollTo = (id, $event) ->
-      # Basic Angular Scroll
+      # Basic Angular scrollTo
       old = $location.hash()
       $event.preventDefault()
       $event.stopPropagation()
