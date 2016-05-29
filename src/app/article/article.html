@@ -14,5 +14,18 @@
     </div>
   </header>
   <post class="clearfix" post='post' show-toc='showToc'></post>
+  <footer class="post-footer">
+    <section class="share">
+      <a ng-href='http://twitter.com/share?text={{post.title}}url=http://notes.viphat.work/{{post.slug}}/' >
+        <i class="fa fa-twitter-square fa-2x"></i>
+      </a>
+      <a ng-href='https://www.facebook.com/sharer/sharer.php?u=http://notes.viphat.work/{{post.slug}}/' style='margin-left: -15px;' >
+        <i class="fa fa-facebook-square fa-2x"></i>
+      </a>
+      <a ng-href='https://plus.google.com/share?url=http://notes.viphat.work/{{post.slug}}/' style='margin-left: -15px;' >
+        <i class="fa fa-google-plus-square fa-2x"></i>
+      </a>
+    </section>
+  </footer>
 </article>
 <turbo-footer></turbo-footer>

@@ -176,6 +176,23 @@ a.mdl-mini-footer--social-btn, a.mdl-mini-footer__social-btn {
   }
 }
 
+.post-footer {
+  padding: 0.5rem 0;
+  text-align: left;
+  .share {
+    a {
+      font-size: 1.8rem;
+      display: inline-block;
+      margin: 1.4rem 1.6rem 1.6rem 0;
+      color: #BBC7CC;
+    }
+    a:hover {
+      color: #50585D;
+    }
+      
+  }
+}
+
 .table-of-contents {
   width: 80%;
   background-color: #fcf8e3;

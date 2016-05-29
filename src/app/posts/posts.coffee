@@ -7,7 +7,7 @@ angular.module 'turboGhost.posts', []
   $scope.lastItem = null
   componentHandler.upgradeAllRegistered()
   $scope.currentPage = parseInt($routeParams.page || 1)
-  perPage = 10
+  perPage = 5
 
   FirebaseService.getCountOfPosts().once('value').then (snapshot) ->
     totalCount = snapshot.numChildren() 
